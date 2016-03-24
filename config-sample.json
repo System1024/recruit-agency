@@ -1,0 +1,83 @@
+{
+	"sources": 	{
+		"res1" : {
+			"source": {
+				"class": "Che\\Source\\File",
+				"params": {
+					"file": "../Tests/file.csv"
+				}
+			},
+			"parser": {
+				"class": "Che\\Parser\\Csv",
+				"params": {
+					"delimiter": ";"
+				}
+			}
+
+		},
+		"res3" : {
+			"source": {
+				"class": "Che\\Source\\File",
+				"params": {
+					"file": "file2.csv"
+				}
+			},
+			"parser": {
+				"class": "Che\\Parser\\Csv",
+				"params": {
+					"delimiter": ";"
+				}
+			},
+			"group": "res1group"
+		},
+		"http1" : {
+			"source": {
+				"class": "Che\\Source\\Http",
+				"params": {
+					"url": "http://127.0.0.1/Tests/file2.csv"
+				}
+			},
+			"parser": {
+				"class": "Che\\Parser\\Csv",
+				"params": {
+					"delimiter": ";"
+				}
+			},
+			"group": "res1group"
+		}		
+	},
+	"uniquefields": ["id", "source"],
+	"parsers": {
+		"Che\\Parser\\Csv": {
+			"delimiter": ",",
+			"enclosure": "\"",
+			"escape": "\\"
+		},
+		"Che\\Source\\Http": {
+			"port": 7777	
+		}
+	},
+	"db": {
+		"mysql": {
+			"host": "10.0.2.10",
+			"port": 3306,
+			"dbname": "whouse",
+			"login": "whlogin",
+			"password": "hbfrTfa56"
+		},
+		"badhostmysql": {
+			"host": "192.168.100.100",
+			"port": 3306,
+			"dbname": "whouse",
+			"login": "whlogin",
+			"password": "hbfrTfa56"
+		},
+
+		"redis": {
+			"host": "127.0.0.1"
+		}
+	}
+
+
+
+}

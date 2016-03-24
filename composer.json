@@ -1,0 +1,20 @@
+{
+    "name": "sergii/test",
+    "description": "Test",
+    "type": "Test",
+    "require": {
+        "monolog/monolog": "^1.17",
+        "gigablah/sphinxphp": "^2.0",
+        "symfony/event-dispatcher": "^3.0"        
+    },
+    "license": "public",
+    "authors": [
+        {
+            "name": "Sergii",
+            "email": "panua01@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {"Che\\": "src/"}
+    }
+}
